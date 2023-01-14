@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  url-redirect:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "8888:8080"
+    volumes:
+      - ./example:/mnt:rw
+    environment:
+      - CONFIG_FILE=/etc/url-redirect/config.toml
+      - DB_FILE=/mnt/db.toml
