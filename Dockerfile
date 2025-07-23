@@ -20,4 +20,4 @@ COPY ./files/config.toml /etc/url-redirect/config.toml
 
 RUN adduser --system --shell=/bin/nologin --uid=1000 urlredirect
 USER urlredirect
-CMD ["/usr/bin/url-redirect"]
+ENTRYPOINT [ "/usr/bin/url-redirect" ]

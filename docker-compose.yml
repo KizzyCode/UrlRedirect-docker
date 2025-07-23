@@ -1,8 +1,7 @@
 services:
   url-redirect:
-    build:
-      context: ./
-      dockerfile: Dockerfile
+    build: .
+    init: true
     ports:
       - "8888:8080"
     volumes:
