@@ -18,6 +18,6 @@ FROM debian:stable-slim
 COPY --from=buildenv /root/.cargo/bin/url-redirect /usr/bin/
 COPY ./files/config.toml /etc/url-redirect/config.toml
 
-RUN adduser --system --shell=/bin/nologin --uid=1000 urlredirect
+RUN useradd --system --shell=/bin/nologin --uid=1000 urlredirect
 USER urlredirect
 ENTRYPOINT [ "/usr/bin/url-redirect" ]
